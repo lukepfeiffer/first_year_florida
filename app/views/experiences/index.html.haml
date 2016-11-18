@@ -1,8 +1,13 @@
+%h1.center
+  = @user.username
+  's experiences
 - @experiences.each do |experience|
   .cards
     .card
       .card-image= image_tag experience.image_url
-      .card-header= experience.title
+      .card-header
+        = experience.title
+        .right= experience.date.strftime("%B %-d, %Y")
       .card-copy
         %p= experience.description
 = will_paginate @experiences

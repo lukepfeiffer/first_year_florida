@@ -1,13 +1,13 @@
 class ExperiencesController < ApplicationController
   def index
     if params[:user_id].present?
-      user = User.where(id: params[:user_id])
+      @user = User.where(id: params[:user_id]).first
     elsif params[current_user].present?
-      user = current_user
+      @user = current_user
     else
-      user = User.last
+      @user = User.last
     end
-    @experiences = user.first.experiences.paginate(page: params[:page], per_page: 1)
+    @experiences = @user.experiences.paginate(page: params[:page], per_page: 1)
   end
 
   def new

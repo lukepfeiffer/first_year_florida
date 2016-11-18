@@ -38,6 +38,10 @@
   font-family: $default_font;
   margin: 0;
 
+  .center{
+    text-align: center;
+  }
+
   .left{
     float: left;
   }

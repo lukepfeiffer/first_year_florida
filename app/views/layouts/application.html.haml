@@ -13,6 +13,7 @@
       - else
         = link_to 'Sign In', new_user_path, class: 'navigation-menu-button'
       = link_to 'Experiences', random_user_path, class: 'navigation-menu-button'
+      = link_to 'Profile', user_path(current_user.id), class: 'navigation-menu-button' if current_user.present?
       = link_to 'Home', root_path, class: 'navigation-menu-button'
     -# .navigation-menu-button
     -#   .navigation-tools
