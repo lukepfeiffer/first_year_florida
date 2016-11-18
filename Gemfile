@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-
+gem 'authem'
 gem 'bourbon'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'haml-rails'
