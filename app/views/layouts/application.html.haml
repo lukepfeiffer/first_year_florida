@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+%head
+  %title FirstYearFlorida
+  = stylesheet_link_tag    'application', media: 'all'
+  = javascript_include_tag 'application'
+  = csrf_meta_tags
+%body
+  %header.navigation{:role => "banner"}
+    .navigation-wrapper
+      %a.logo{:href => "javascript:void(0)"}
+        %img{:alt => "Logo Image", :src => "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTRYV0_d4IDw_DG73UEuaO7ZLoTScWe3yqGKBPv887jdBoRMnFcTKZQZoY"}/
+      = link_to 'Home', root_path, class: 'navigation-menu-button'
+      = link_to 'My Experience', root_path, class: 'navigation-menu-button'
+    -# .navigation-menu-button
+    -#   .navigation-tools
+    -#     .search-bar
+    -#       %form{:role => "search"}
+    -#         %input{:placeholder => "Enter Search", :type => "search"}/
+    -#         %button{:type => "submit"}
+    -#           %img{:alt => "Search Icon", :src => "https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/search-icon.png"}/
+
+
+%body#main
+  = yield

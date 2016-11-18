@@ -1,5 +1,8 @@
 - @images.each do |image|
-  = image.title, class: 'title'
-  = image_tag image.url, class: 'image'
-  = image.description, class: 'description'
+  .cards
+    .card
+      .card-image= image_tag image.url
+      .card-header= image.title
+      .card-copy
+        %p= image.description
 = will_paginate @images
