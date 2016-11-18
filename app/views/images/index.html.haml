@@ -1,3 +1,5 @@
-%h1 Images 1
-
+- @images.each do |image|
+  = image.title, class: 'title'
+  = image_tag image.url, class: 'image'
+  = image.description, class: 'description'
 = will_paginate @images

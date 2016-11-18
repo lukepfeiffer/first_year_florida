@@ -17,9 +17,10 @@ ActiveRecord::Schema.define(version: 20161118162129) do
   enable_extension "plpgsql"
 
   create_table "images", force: :cascade do |t|
-    t.string "url"
-    t.string "description"
-    t.string "title"
+    t.string  "url"
+    t.string  "description"
+    t.string  "title"
+    t.boolean "rotate"
   end
 
 end

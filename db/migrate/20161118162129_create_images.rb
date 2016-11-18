@@ -4,6 +4,7 @@ class CreateImages < ActiveRecord::Migration
       t.string :url
       t.string :description
       t.string :title
+      t.boolean :rotate
     end
   end
 end

@@ -1,10 +1,12 @@
 source 'https://rubygems.org'
 
 
+gem 'bourbon'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'haml-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'jquery-rails'
+gem 'neat'
 gem 'pg'
 gem 'rails', '4.2.2'
 gem 'sass-rails', '~> 5.0'
