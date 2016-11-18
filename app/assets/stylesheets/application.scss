@@ -38,6 +38,14 @@
   font-family: $default_font;
   margin: 0;
 
+  .left{
+    float: left;
+  }
+
+  .right{
+    float: right;
+  }
+
   #username{
     margin: 0px 5px;
   }
@@ -47,7 +55,7 @@
   }
 
   label{
-      font-size: $font-size;
+      font-size: $font-size + 5;
   }
 
   fieldset{
@@ -128,22 +136,20 @@
 
   .form{
     margin: 0px 5px;
+    width: 50%;
+
+    input{
+    }
 
     textarea{
       height: 200px;
-      width: 50%;
     }
 
-    .inline-fields{
-      width: 50%;
-      .left{
-        width: 49%;
-        float: left;
-      }
-      .right{
-        width: 49%;
-        float: right;
-      }
+    .left{
+      width: 35%;
+    }
+    .right{
+      width: 60%;
     }
   }
   #sign_up{
@@ -156,14 +162,12 @@
     .left{
       border: 1px solid $border-color;
       border-radius: $default-border-radius;
-      float: left;
       width: 49%;
     }
 
     .right{
       border: 1px solid $border-color;
       border-radius: $default-border-radius;
-      float: right;
       width: 49%;
     }
   }

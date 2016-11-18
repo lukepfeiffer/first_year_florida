@@ -1,0 +1,19 @@
+.content
+  = form_for @experience do |f|
+    %fieldset
+
+      %dt= f.label :title
+      %dd= f.text_field :title, placeholder: 'Great Experience'
+
+      .left
+        %dt= f.label :date
+        %dd= f.date_field :date
+      .right
+        %dt= f.label :image_url
+        %dd= f.text_field :image_url, placeholder: 'https://image.com'
+
+      %dt= f.label :description
+      %dd= f.text_area :description
+
+    %fieldset.actions
+      = f.submit 'Create'

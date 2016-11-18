@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161118182751) do
+ActiveRecord::Schema.define(version: 20161118193428) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,14 +30,14 @@ ActiveRecord::Schema.define(version: 20161118182751) do
   add_index "authem_sessions", ["expires_at", "subject_type", "subject_id"], name: "index_authem_sessions_subject", using: :btree
   add_index "authem_sessions", ["expires_at", "token"], name: "index_authem_sessions_on_expires_at_and_token", unique: true, using: :btree
 
-  create_table "images", force: :cascade do |t|
+  create_table "experiences", force: :cascade do |t|
     t.date     "date"
-    t.string   "url"
+    t.string   "image_url"
     t.string   "title"
+    t.integer  "user_id"
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "user_id"
   end
 
   create_table "users", force: :cascade do |t|

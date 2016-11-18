@@ -6,7 +6,12 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @images = current_user.images.order("created_at DESC")
+    @experiences = current_user.experiences.order("created_at DESC")
+  end
+
+  def random_user
+    user = User.all.sample(1)
+    redirect_to experiences_path(user_id: user.first.id)
   end
 
   def create
