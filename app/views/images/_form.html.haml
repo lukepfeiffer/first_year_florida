@@ -1,0 +1,17 @@
+.content
+  = form_for @image do |f|
+    %fieldset
+      .inline-fields
+        .left
+          %dt= f.label :title
+          %dd= f.text_field :title, placeholder: 'Great Experience'
+
+        .right
+          %dt= f.label :image_url
+          %dd= f.text_field :url, placeholder: 'https://image.com'
+
+      %dt= f.label :description
+      %dd= f.text_area :description
+
+    %fieldset.actions
+      = f.submit 'Create'

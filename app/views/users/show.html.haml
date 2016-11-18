@@ -1,0 +1,12 @@
+.user_show
+  %h2 You Experiences
+
+  %div= link_to 'Create experience', new_image_path
+
+  - @images.each do |image|
+    .small-cards
+      .card
+        .card-image= image_tag image.url
+        .card-header= image.title
+        .card-copy
+          %p= image.description

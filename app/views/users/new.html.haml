@@ -5,7 +5,7 @@
       = form_for @user do |f|
         %fieldset
           %dt= f.label :email
-          %dd= f.text_field :email
+          %dd= f.text_field :email, placeholder: 'Greate Experience'
 
           %dt= f.label :password
           %dd= f.password_field :password

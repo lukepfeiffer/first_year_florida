@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     user = User.find_by(email: params[:email].downcase)
     if user && user.authenticate(params[:password])
       sign_in(user)
-      redirect_to(images_path)
+      redirect_to user_path(user.id)
     else
       flash.now.alert = "Your email and password do not match"
       render :new
