@@ -8,7 +8,10 @@
     .navigation-wrapper
       %a.logo{:href => "javascript:void(0)"}
         %img{:alt => "Logo Image", :src => "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTRYV0_d4IDw_DG73UEuaO7ZLoTScWe3yqGKBPv887jdBoRMnFcTKZQZoY"}/
-      = link_to 'Sign In', new_user_path, class: 'navigation-menu-button'
+      - if current_user.present?
+        = link_to 'Sign out', log_out_path, class: 'navigation-menu-button'
+      - else
+        = link_to 'Sign In', new_user_path, class: 'navigation-menu-button'
       = link_to 'Experiences', images_path, class: 'navigation-menu-button'
       = link_to 'Home', root_path, class: 'navigation-menu-button'
     -# .navigation-menu-button
