@@ -2,8 +2,6 @@ class ExperiencesController < ApplicationController
   def index
     if params[:user_id].present?
       @user = User.where(id: params[:user_id]).first
-    elsif params[current_user].present?
-      @user = current_user
     else
       @user = User.last
     end

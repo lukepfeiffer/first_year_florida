@@ -1,12 +1,16 @@
 .user_show
-  %h2 You Experiences
+  %h2 Your Experiences
 
-  %div= link_to 'Create experience', new_experience_path
+  .actions
+    %div.left#create-experience= link_to 'Create experience', new_experience_path
+    %div#my-experience= link_to 'View Experiences', experiences_path(user_id: current_user.id)
 
   - @experiences.each do |experience|
     .small-cards
       .card
         .card-image= image_tag experience.image_url
-        .card-header= experience.title
+        .card-header
+          = experience.title
+          .right= experience.date.strftime("%B %-d, %Y" ) if experience.date.present?
         .card-copy
           %p= experience.description

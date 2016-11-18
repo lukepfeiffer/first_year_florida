@@ -21,6 +21,7 @@
 #main{
   $background-color: #fff !default;
   $default-font: sans-serif !default;
+  $font-color: #fff;
   $font-size: 14px;
   $border-color: darken($background-color, 40%);
   $border-field-color: darken($background-color, 55%);
@@ -30,6 +31,7 @@
   $textarea-height: 6.0em;
   $primary-color: #008B00;
   $gator-orange: #dd661e !default;
+  $gator-blue: blue;
   $success-color: #28AADC;
   $danger-color: #FA3434;
   $warning-color: #FF9308;
@@ -39,7 +41,8 @@
   margin: 0;
 
   .center{
-    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
   }
 
   .left{
@@ -56,6 +59,58 @@
 
   .user_show{
     margin: 10px;
+  }
+
+  .experience-header{
+    width: 58%;
+    text-align: center;
+    color: $gator-blue;
+    border-bottom: 1px solid $gator-blue;
+  }
+
+  .actions{
+    margin: 0 0 10px 0;
+    #my-experience{
+      padding: 0 5px 0 0;
+      a{
+        padding: 10px;
+        font-size: $font-size;
+        background-color: white;
+        font-weight: 300;
+        text-transform: uppercase;
+        height: 2.9rem;
+        border-radius: 28px;
+        color: $gator-blue;
+        text-decoration: none;
+        border: 1px solid $gator-blue;
+        &:hover{
+          color: darken($gator-blue, 10%);
+          border: 1px solid darken($gator-blue, 10%);
+          background-color: darken($background-color, 2%);
+        }
+      }
+    }
+
+    #create-experience{
+      padding: 0 5px 0 0;
+      a{
+        padding: 10px;
+        font-size: $font-size;
+        background-color: white;
+        font-weight: 300;
+        text-transform: uppercase;
+        height: 2.9rem;
+        border-radius: 28px;
+        color: $gator-orange;
+        text-decoration: none;
+        border: 1px solid $gator-orange;
+        &:hover{
+          color: darken($gator-orange, 10%);
+          border: 1px solid darken($gator-orange, 10%);
+          background-color: darken($background-color, 2%);
+        }
+      }
+    }
   }
 
   label{
@@ -350,7 +405,7 @@
 
       &:focus,
       &:hover {
-        color: $navigation-color-hover;
+        color: darken($font-color, 10%);
       }
     }
 
