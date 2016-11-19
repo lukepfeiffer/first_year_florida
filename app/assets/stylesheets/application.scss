@@ -31,7 +31,7 @@
   $textarea-height: 6.0em;
   $primary-color: #008B00;
   $gator-orange: #dd661e !default;
-  $gator-blue: blue;
+  $gator-blue: #00529b;
   $success-color: #28AADC;
   $danger-color: #FA3434;
   $warning-color: #FF9308;
@@ -43,6 +43,14 @@
   .center{
     margin-right: auto;
     margin-left: auto;
+  }
+
+  .image-url{
+    display: none;
+  }
+
+  .filepicker-url{
+    display: none;
   }
 
   .left{
@@ -59,6 +67,89 @@
 
   .user_show{
     margin: 10px;
+    .archive{
+      padding: 7px;
+      font-size: $font-size - 3;
+      background-color: $background-color;
+      font-weight: 300;
+      text-transform: uppercase;
+      border-radius: 18px;
+      color: $danger-color;
+      text-decoration: none;
+      border: 1px solid $danger-color;
+      margin-bottom: 5px;
+      &:hover{
+        color: darken($danger-color, 10%);
+        border: 1px solid darken($danger-color, 10%);
+        background-color: darken($background-color, 2%);
+        cursor: pointer;
+      }
+    }
+    .actions{
+      margin: 0 0 10px 0;
+      #my-experience{
+        padding: 0 5px 0 0;
+        a{
+          padding: 10px;
+          font-size: $font-size;
+          background-color: $background-color;
+          font-weight: 300;
+          text-transform: uppercase;
+          height: 2.9rem;
+          border-radius: 28px;
+          color: $gator-blue;
+          text-decoration: none;
+          border: 2px solid $gator-blue;
+          &:hover{
+            color: darken($gator-blue, 10%);
+            border: 2px solid darken($gator-blue, 10%);
+            background-color: darken($background-color, 2%);
+          }
+        }
+      }
+
+      #archived-experiences{
+        padding: 0 5px 0 0;
+        a{
+          padding: 10px;
+          font-size: $font-size;
+          background-color: $background-color;
+          font-weight: 300;
+          text-transform: uppercase;
+          height: 2.9rem;
+          border-radius: 28px;
+          color: $danger-color;
+          text-decoration: none;
+          border: 2px solid $danger-color;
+          &:hover{
+            color: darken($danger-color, 10%);
+            border: 2px solid darken($danger-color, 10%);
+            background-color: darken($background-color, 2%);
+          }
+        }
+      }
+
+      #create-experience{
+        padding: 0 5px 0 0;
+        a{
+          padding: 10px;
+          font-size: $font-size;
+          background-color: white;
+          font-weight: 300;
+          text-transform: uppercase;
+          height: 2.9rem;
+          border-radius: 28px;
+          color: $gator-orange;
+          text-decoration: none;
+          border: 2px solid $gator-orange;
+          &:hover{
+            color: darken($gator-orange, 10%);
+            border: 2px solid darken($gator-orange, 10%);
+            background-color: darken($background-color, 2%);
+          }
+        }
+      }
+    }
   }
 
   .experience-header{
@@ -66,51 +157,6 @@
     text-align: center;
     color: $gator-blue;
     border-bottom: 1px solid $gator-blue;
-  }
-
-  .actions{
-    margin: 0 0 10px 0;
-    #my-experience{
-      padding: 0 5px 0 0;
-      a{
-        padding: 10px;
-        font-size: $font-size;
-        background-color: white;
-        font-weight: 300;
-        text-transform: uppercase;
-        height: 2.9rem;
-        border-radius: 28px;
-        color: $gator-blue;
-        text-decoration: none;
-        border: 1px solid $gator-blue;
-        &:hover{
-          color: darken($gator-blue, 10%);
-          border: 1px solid darken($gator-blue, 10%);
-          background-color: darken($background-color, 2%);
-        }
-      }
-    }
-
-    #create-experience{
-      padding: 0 5px 0 0;
-      a{
-        padding: 10px;
-        font-size: $font-size;
-        background-color: white;
-        font-weight: 300;
-        text-transform: uppercase;
-        height: 2.9rem;
-        border-radius: 28px;
-        color: $gator-orange;
-        text-decoration: none;
-        border: 1px solid $gator-orange;
-        &:hover{
-          color: darken($gator-orange, 10%);
-          border: 1px solid darken($gator-orange, 10%);
-          background-color: darken($background-color, 2%);
-        }
-      }
-    }
   }
 
   label{
@@ -150,16 +196,6 @@
     .small-field{
         width: 35%;
     }
-
-  }
-  button{
-    padding: 10px;
-    font-size: $font-size;
-    background-color: white;
-    font-weight: 300;
-    text-transform: uppercase;
-    height: 2.9rem;
-    border-radius: 28px;
   }
 
   .success-button{

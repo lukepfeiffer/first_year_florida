@@ -12,21 +12,31 @@ class ExperiencesController < ApplicationController
     @experience = Experience.new
   end
 
+  def archived_experiences
+  end
+
   def create
-    image = Experience.new(experience_params)
-    image.user_id = current_user.id
-    if image.save
+    experience = Experience.new(experience_params)
+    experience.user_id = current_user.id
+    if experience.save
       redirect_to user_path(current_user.id)
     else
       redirect_to :new
     end
   end
 
+  def destroy
+    experience = Experience.find(params[:id])
+    experience.update(archive_date: DateTime.now)
+    head :no_content
+  end
+
+
   private
 
   def experience_params
     params.require(:experience).permit(
-      :url,
+      :image_url,
       :date,
       :description,
       :user_id,

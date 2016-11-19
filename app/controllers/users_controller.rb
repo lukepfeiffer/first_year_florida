@@ -1,12 +1,20 @@
 class UsersController < ApplicationController
 
   def new
-    @user = User.new
+    if current_user.present?
+      @user = User.new
+    else
+      redirect_to root_path
+    end
   end
 
   def show
-    @user = User.find(params[:id])
-    @experiences = current_user.experiences.order("created_at DESC")
+    if current_user.id == params[:id].to_i
+      @user = User.find(params[:id])
+      @experiences = current_user.experiences.order("created_at DESC")
+    else
+      redirect_to experiences_path(user_id: 1)
+    end
   end
 
   def random_user
