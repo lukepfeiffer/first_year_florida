@@ -268,7 +268,21 @@
   }
 
   .pagination{
+    $background-color: #D7DEF0;
+    $font-color: #4D4D4D;
     text-align: center;
+    margin: 0 0 30px 0;
+    a, .previous_page, .next_page, em{
+      background-color: $background-color;
+      text-decoration: none;
+      color: $font-color;
+      padding: 10px;
+      border-radius: 4px;
+    }
+
+    em, .disabled{
+      background-color: darken($background-color, 10%);
+    }
   }
 
   .cards {
@@ -302,7 +316,6 @@
     border: $card-border;
     border-radius: $base-border-radius;
     box-shadow: 0 2px 4px darken($base-background-color, 10%);
-    cursor: pointer;
     flex-basis: 15em;
     flex-grow: 1;
     margin: 0 $card-margin $base-spacing $card-margin;

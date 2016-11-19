@@ -1,11 +1,7 @@
 class UsersController < ApplicationController
 
   def new
-    if current_user.present?
-      @user = User.new
-    else
-      redirect_to root_path
-    end
+    @user = User.new
   end
 
   def show
