@@ -5,14 +5,15 @@ class ExperiencesController < ApplicationController
     else
       @user = User.last
     end
-    @experiences = @user.experiences.paginate(page: params[:page], per_page: 1)
+    @experiences = @user.experiences.active.paginate(page: params[:page], per_page: 1)
   end
 
   def new
     @experience = Experience.new
   end
 
-  def archived_experiences
+  def archived
+    @experiences = current_user.experiences.archived
   end
 
   def create
@@ -23,6 +24,12 @@ class ExperiencesController < ApplicationController
     else
       redirect_to :new
     end
+  end
+
+  def unarchive
+    experience = Experience.find(params[:experience_id])
+    experience.update(archive_date: nil)
+    head :no_content
   end
 
   def destroy

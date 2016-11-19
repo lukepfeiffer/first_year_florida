@@ -1,10 +1,10 @@
 .user_show
-  %h2 Active Experiences
+  %h2 Archived Experiences
 
   .actions
     %div.left#create-experience= link_to 'Create experience', new_experience_path
     %div.left#my-experience= link_to 'View Experiences', experiences_path(user_id: current_user.id)
-    %div#archived-experiences= link_to 'Archived Experience', archived_path
+    %div#archived-experiences= link_to 'Active Experience', user_path(current_user.id)
 
   - @experiences.each do |experience|
     .small-cards{data: {id: experience.id}}
@@ -15,4 +15,4 @@
           .right= experience.date.strftime("%B %-d, %Y" ) if experience.date.present?
         .card-copy
           %p= experience.description
-          %button.archive.right{data: {url: experience_path(id: experience.id)}} Archive
+          %button.unarchive.right{data: {url: unarchive_path(experience_id: experience.id)}} Activate

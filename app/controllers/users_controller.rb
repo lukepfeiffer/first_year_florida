@@ -11,7 +11,7 @@ class UsersController < ApplicationController
   def show
     if current_user.id == params[:id].to_i
       @user = User.find(params[:id])
-      @experiences = current_user.experiences.order("created_at DESC")
+      @experiences = current_user.experiences.active.order("created_at DESC")
     else
       redirect_to experiences_path(user_id: 1)
     end
