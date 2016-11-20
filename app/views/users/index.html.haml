@@ -1,0 +1,7 @@
+- if params[:search].present?
+  %h1= "Search for: " + params[:search]
+-else
+  %h1 All Users
+
+- @users.each do |user|
+  %h1= user.username

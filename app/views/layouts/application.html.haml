@@ -13,16 +13,17 @@
         = link_to 'Sign out', log_out_path, class: 'navigation-menu-button'
       - else
         = link_to 'Sign In', new_user_path, class: 'navigation-menu-button'
-      = link_to 'Experiences', random_user_path, class: 'navigation-menu-button'
+      = link_to 'Random', random_user_path, class: 'navigation-menu-button'
+      = link_to 'All Users', users_path, class: 'navigation-menu-button'
       = link_to 'Profile', user_path(current_user.id), class: 'navigation-menu-button' if current_user.present?
       = link_to 'Home', root_path, class: 'navigation-menu-button'
-    -# .navigation-menu-button
-    -#   .navigation-tools
-    -#     .search-bar
-    -#       %form{:role => "search"}
-    -#         %input{:placeholder => "Enter Search", :type => "search"}/
-    -#         %button{:type => "submit"}
-    -#           %img{:alt => "Search Icon", :src => "https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/search-icon.png"}/
+    .navigation-menu-button
+      .navigation-tools
+        .search-bar
+          = form_tag(users_path, method: :get) do
+            = text_field_tag :search, nil, placeholder: 'search'
+            %button{:type => "submit"}
+              %img{:alt => "Search Icon", :src => "https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/search-icon.png"}/
 - if current_user.present?
   %span#username
     = "Signed in as: "

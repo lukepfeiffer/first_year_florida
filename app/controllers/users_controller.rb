@@ -4,6 +4,14 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+  def index
+    if params[:search].present?
+      @users = User.fuzzy_search(username: params[:search])
+    else
+      @users = User.all
+    end
+  end
+
   def show
     if current_user.id == params[:id].to_i
       @user = User.find(params[:id])
