@@ -22,7 +22,7 @@ class ExperiencesController < ApplicationController
     if experience.save
       redirect_to user_path(current_user.id)
     else
-      redirect_to :new
+      redirect_to new_experience_path
     end
   end
 

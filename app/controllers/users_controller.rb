@@ -32,7 +32,7 @@ class UsersController < ApplicationController
       sign_in(user)
       redirect_to user_path(user.id)
     else
-      redirect_to root_path
+      redirect_to new_user_path
     end
   end
 

@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
       redirect_to user_path(user.id)
     else
       flash.now.alert = "Your email and password do not match"
-      render :new
+      redirect_to new_user_path
     end
   end
 
