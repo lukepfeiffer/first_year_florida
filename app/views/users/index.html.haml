@@ -1,7 +1,18 @@
-- if params[:search].present?
-  %h1= "Search for: " + params[:search]
--else
-  %h1 All Users
+.header
+  - if params[:search].present?
+    %h1= "Search for: " + params[:search]
+  -else
+    %h1 All Users
 
-- @users.each do |user|
-  %h1= user.username
+.user-list
+  %table.table-minimal
+    %thead
+      %tr
+        %th Username
+        %th # Of Experiences
+    %tbody
+      - @users.each do |user|
+        %tr
+          %td= link_to user.username, experiences_path(user_id: user.id), class: 'table-username'
+          %td= user.experiences.count
+= will_paginate @users

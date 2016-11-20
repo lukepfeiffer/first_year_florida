@@ -6,9 +6,9 @@ class UsersController < ApplicationController
 
   def index
     if params[:search].present?
-      @users = User.fuzzy_search(username: params[:search])
+      @users = User.fuzzy_search(username: params[:search]).paginate(page: params[:page], per_page: 10)
     else
-      @users = User.all
+      @users = User.all.paginate(page: params[:pages], per_page: 10)
     end
   end
 
