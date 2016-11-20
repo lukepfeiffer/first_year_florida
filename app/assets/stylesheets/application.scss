@@ -648,63 +648,38 @@
 
   // Elements on the far right
 
-    .navigation-tools {
-      float: right;
-      background: #505050;
-      clear: both;
-      display: block;
-      height: $navigation-height;
-
-    }
-
-
-  // Search bar
-
-    .search-bar {
-      $search-bar-border-color: $base-border-color;
-      $search-bar-border: 1px solid $search-bar-border-color;
-      $search-bar-background: lighten($search-bar-border-color, 10%);
-
-      float: left;
-      padding: 0.85em 0.85em 0.7em 0.6em;
-      width: 60%;
-
-      form {
-        position: relative;
-
-        input[type=search] {
-          background: $navigation-search-background;
-          border: $navigation-search-border;
-          border-radius: $base-border-radius * 2;
-          box-sizing: border-box;
-          color: $navigation-color;
-          font-size: 0.9em;
-          font-style: italic;
+    .search{
+      padding: 0;
+      .navigation-tools {
+        clear: both;
+        display: block;
+        height: $navigation-height;
+        width: 249px;
+        form{
           margin: 0;
-          padding: 0.5em 0.8em;
-          width: 100%;
         }
 
-        // button[type=submit] {
-        //   background: $navigation-search-background;
-        //   border: 0;
-        //   bottom: 0.3em;
-        //   left: auto;
-        //   outline: none;
-        //   padding: 0 9px;
-        //   position: absolute;
-        //   right: 0.3em;
-        //   top: 0.3em;
-        //   height: 25px;
+        input[type=search]{
+          font-size: $font-size;
+          padding: 10px;
+          height: 100%;
+          background-color: darken(#fff, 4%);
+        }
 
-        //   img {
-        //     height: 12px;
-        //     opacity: 0.7;
-        //     padding: 1px;
-        //   }
-        // }
+        button[type=submit]{
+          background-color: $gator-orange;
+          border: 1px solid $background-color;
+          width: 20%;
+          height: 100%;
+          img{
+            height: 50%;
+            &:hover{
+              cursor: pointer;
+            }
+          }
+        }
+
       }
-
     }
   }
 }
